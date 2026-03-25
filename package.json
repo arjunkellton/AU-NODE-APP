@@ -1,0 +1,29 @@
+{
+  "name": "au-backend-app",
+  "version": "1.0.0",
+  "description": "Dashboard backend built with Node.js, Express, and TypeScript using a JSON file as the data source.",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "check": "tsc --noEmit"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "typescript",
+    "mvc"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.14",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.2"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "info": {
+    "_postman_id": "a1d7f1f2-2c8f-4dd5-9a54-3f54f64c0b31",
+    "name": "AU Backend App",
+    "description": "Postman collection for testing the AU Backend App APIs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        },
+        "description": "Checks whether the server is running."
+      },
+      "response": []
+    },
+    {
+      "name": "Get All States",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/states",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "states"
+          ]
+        },
+        "description": "Returns the list of all states for the dropdown."
+      },
+      "response": []
+    },
+    {
+      "name": "Get State Date Range",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/states/{{state}}/dates",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "states",
+            "{{state}}",
+            "dates"
+          ]
+        },
+        "description": "Returns the minimum and maximum order dates available for a selected state."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Dashboard Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/dashboard?customerId={{customerId}}&state={{state}}&startDate={{startDate}}&endDate={{endDate}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "dashboard"
+          ],
+          "query": [
+            {
+              "key": "customerId",
+              "value": "{{customerId}}"
+            },
+            {
+              "key": "state",
+              "value": "{{state}}"
+            },
+            {
+              "key": "startDate",
+              "value": "{{startDate}}"
+            },
+            {
+              "key": "endDate",
+              "value": "{{endDate}}"
+            }
+          ]
+        },
+        "description": "Returns dashboard cards and monthly chart data filtered by customer, state, and date range."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000"
+    },
+    {
+      "key": "state",
+      "value": "Kentucky"
+    },
+    {
+      "key": "customerId",
+      "value": "CG-12520"
+    },
+    {
+      "key": "startDate",
+      "value": "2016-01-01"
+    },
+    {
+      "key": "endDate",
+      "value": "2016-12-31"
+    }
+  ]
+}
