@@ -124,12 +124,17 @@ export const getDashboardData = async (
 
   const totalSales = filteredRecords.reduce((sum, record) => sum + record.Sales, 0);
   const totalRevenue = filteredRecords.reduce((sum, record) => sum + record.Profit, 0);
+  const totalDiscount =
+    filteredRecords.length > 0
+      ? filteredRecords.reduce((sum, record) => sum + record.Discount, 0) / filteredRecords.length
+      : 0;
 
   return {
     filters: query,
     cards: {
       totalSales: roundToTwo(totalSales),
       totalOrders: uniqueOrders.size,
+      totalDiscount: roundToTwo(totalDiscount * 100),
       totalRevenue: roundToTwo(totalRevenue),
     },
     chart: buildChartData(filteredRecords),

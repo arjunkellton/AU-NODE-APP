@@ -38,6 +38,7 @@ export interface DashboardQuery {
 export interface DashboardCards {
   totalSales: number;
   totalOrders: number;
+  totalDiscount: number;
   totalRevenue: number;
 }
 
